@@ -1,0 +1,20 @@
+class GoogleApi
+  def fetch_books(query)
+    url = "https://www.googleapis.com/books/v1/volumes?q=#{query}&maxResults=30"
+    uri = URI.parse(url)
+    response = Net::HTTP.get_response(uri)
+    json = JSON.parse(response.body)["items"]
+    books = []
+
+    json.each do |book|
+      books << {title: book["volumeInfo"]["title"], 
+                authors: book["volumeInfo"]["authors"], 
+                description:  book["volumeInfo"]["description"],
+                image: book["volumeInfo"]["imageLinks"]["thumbnail"],
+                link: book["volumeInfo"]["canonicalVolumeLink"]}
+    end
+    books
+ 
+
+  end
+end
