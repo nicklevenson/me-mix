@@ -18,6 +18,6 @@ class ArtApi
       filtered_data << {title: r["title"], creator: r["artistDisplayName"], date: r["objectEndDate"],image: r["primaryImageSmall"], url: r["objectURL"]}
     end
     filtered_data
-    byebug
+  
   end
 end
