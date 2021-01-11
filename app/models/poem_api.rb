@@ -57,7 +57,7 @@ class PoemApi
       url = (heading.css('h2').css('a').collect{|link| link.attribute('href').value})[0]
       if url != nil
         link = base + url
-        poems << {title: title, author: author, link: link}
+        poems << {title: title, creator: author, url: link}
       end   
     end
     poems
