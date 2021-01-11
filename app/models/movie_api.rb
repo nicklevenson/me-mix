@@ -11,10 +11,13 @@ class MovieApi
     end
     filtered_data = []
     movies.each do |movie|
-      filtered_data << {title: movie.title, year: movie.year, director: movie.director, description: movie.plot, url: movie.poster}
+      filtered_data << {title: movie.title, 
+                        year: movie.year, 
+                        director: movie.director, 
+                        description: movie.plot, 
+                        image: movie.poster, 
+                        url: "imdb.com/title/#{movie.imdb_id}"}
     end
-    
     filtered_data
- 
   end
 end
