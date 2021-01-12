@@ -19,4 +19,7 @@ class Mix < ApplicationRecord
   has_many :poems, through: :poem_mixes
   has_many :books, through: :book_mixes
 
+  has_many :likes
+  has_many :comments
+
 end
