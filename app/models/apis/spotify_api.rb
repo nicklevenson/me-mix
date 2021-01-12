@@ -5,11 +5,11 @@ class SpotifyApi
     filtered_data = []
     results.each do |result|
       if result.type == 'album'
-        filtered_data << {title: result.name,creators: result.artists.collect{|c|c.name}, url: result.uri, type: result.type}
+        filtered_data << {data_type: "music", title: result.name,creators: result.artists.collect{|c|c.name}, url: result.uri, type: result.type}
       elsif result.type == 'artist'
-        filtered_data << {title: result.name,creators: result.name, url: result.uri, type: result.type}
+        filtered_data << {data_type: "music", title: result.name,creators: result.name, url: result.uri, type: result.type}
       elsif result.type == 'track'
-        filtered_data << {title: result.name,creators: result.artists.collect{|c|c.name}, url: result.uri, type: result.type}
+        filtered_data << {data_type: "music", title: result.name,creators: result.artists.collect{|c|c.name}, url: result.uri, type: result.type}
       elsif result.type == 'playlist'
         filtered_data << {data_type: "music", title: result.name,creators: result.owner.display_name, url: result.uri, type: result.type}
       end

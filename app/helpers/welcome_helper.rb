@@ -38,16 +38,16 @@ module WelcomeHelper
     @art = ArtApi.new.fetch_art(params[:query])
   end
 
-  def render_piece
-    if result["data_type" == "music"]
+  def render_piece(result)
+    if result[:data_type] == "music"
+      render partial: "song", locals: {music: result}
+    elsif result[:data_type] == "poem"
 
-    elsif result["data_type" == "poem"]
+    elsif result[:data_type] == "movie"
 
-    elsif result["data_type" == "movie"]
+    elsif result[:data_type] == "book"
 
-    elsif result["data_type" == "book"]
-
-    elsif result["data_type" == "art"]
+    elsif result[:data_type] == "art"
 
     end
   end
