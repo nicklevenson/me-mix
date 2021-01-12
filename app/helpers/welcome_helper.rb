@@ -5,7 +5,7 @@ module WelcomeHelper
       get_all_results
     end
   end
-  
+
   def get_all_results
       q = params[:query]
       @songs = SpotifyApi.new.fetch_music(q)
@@ -36,5 +36,19 @@ module WelcomeHelper
 
   def get_art
     @art = ArtApi.new.fetch_art(params[:query])
+  end
+
+  def render_piece
+    if result["data_type" == "music"]
+
+    elsif result["data_type" == "poem"]
+
+    elsif result["data_type" == "movie"]
+
+    elsif result["data_type" == "book"]
+
+    elsif result["data_type" == "art"]
+
+    end
   end
 end
