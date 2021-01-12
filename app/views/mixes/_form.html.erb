@@ -1,5 +1,5 @@
-<%=form_for(user) do |f|%>
-
+<%=form_with url: 'mix/new' do |f|%>
+  <%=f.hidden_field 'media', value: media%> 
   <%=fields_for Mix.new do |m|%>
     Add To: <%=m.text_field 'title', list: 'title'%>
   <%end%>
@@ -9,5 +9,5 @@
     <option value="<%=m.title%>"></option>
   <%end%>
   </datalist>
-    
+  <%=f.submit 'Add'%>
 <%end%>
