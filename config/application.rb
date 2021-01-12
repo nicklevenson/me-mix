@@ -13,6 +13,7 @@ module MeMix
     RSpotify::authenticate(ENV["SPOTIFY_API_KEY"], ENV["SPOTIFY_API_SECRET"])
     # Configuration for the application, engines, and railties goes here.
     config.autoload_paths += Dir[Rails.root.join('app', 'models', 'apis')]
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', 'joins')]
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
