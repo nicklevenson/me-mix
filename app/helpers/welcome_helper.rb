@@ -44,7 +44,7 @@ module WelcomeHelper
     elsif result[:data_type] == "poem"
 
     elsif result[:data_type] == "movie"
-
+      render partial: "movie", locals: {movie: result}
     elsif result[:data_type] == "book"
 
     elsif result[:data_type] == "art"
