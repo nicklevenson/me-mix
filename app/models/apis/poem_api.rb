@@ -4,7 +4,7 @@ class PoemApi
     search_url = "https://www.poetryfoundation.org/search?query=#{query}&refinement=poems"
     html = URI.open(search_url)
     doc = Nokogiri::HTML(html)
-    headings = (doc.css('.c-feature'))[0..40]
+    headings = (doc.css('.c-feature'))[0..19]
     poems = []
     headings.each do |heading|
       title = heading.css('.c-feature-hd').text.split(" ").join(" ")
