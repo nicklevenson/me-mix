@@ -1,3 +1,13 @@
-<%=form_for(Mix.new) do |f|%>
-  <%=f.text_field :title, list: 'title'%>
+<%=form_for(user) do |f|%>
+
+  <%=fields_for Mix.new do |m|%>
+    Add To: <%=m.text_field 'title', list: 'title'%>
+  <%end%>
+  
+  <datalist id="title">
+  <%user.mixes.each do |m|%>
+    <option value="<%=m.title%>"></option>
+  <%end%>
+  </datalist>
+    
 <%end%>
