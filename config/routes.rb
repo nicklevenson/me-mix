@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
- 
+  get '/login', to: 'sessions#new'
+  get '/logout', to: 'sessions#destroy'
   resources :poems, only: [:show]
   resources :movies, only: [:show]
   resources :books, only: [:show]

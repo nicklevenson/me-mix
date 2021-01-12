@@ -14,7 +14,8 @@
     <h1>MeMix</h1>
     <br>
     <%=link_to 'Home', '/'%>
-    <a>Profile</a>
+    <%=link_to 'Profile', user_path(@user) unless @user.nil?%>
+    <%=link_to 'Login', new_sessions_path unless @user%>
     <%=link_to 'Create Account', new_user_path%>
     
     
