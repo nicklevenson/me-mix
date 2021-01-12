@@ -1,2 +1,3 @@
 class MusicMix < ApplicationRecord
-end
+  belongs_to :mix
+  belongs_to :music
