@@ -8,7 +8,7 @@ class GoogleApi
 
     json.each do |book|
       books << {
-                data_type: "book"
+                data_type: "book",
                 title: book["volumeInfo"]["title"], 
                 creators: book["volumeInfo"]["authors"], 
                 description:  book["volumeInfo"]["description"],

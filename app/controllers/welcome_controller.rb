@@ -1,8 +1,7 @@
 class WelcomeController < ApplicationController
   include WelcomeHelper
   def index
-    get_results
-    byebug
+    @results = filter
   end
 
 end
