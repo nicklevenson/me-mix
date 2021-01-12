@@ -13,10 +13,11 @@
   <body>
     <h1>MeMix</h1>
     <br>
-    <a>Feed</a>
+    <%=link_to 'Home', '/'%>
     <a>Profile</a>
+    <%=link_to 'Create Account', new_user_path%>
     
-    <%= render partial: 'welcome/search'%>
+    
     <%= yield %>
   </body>
 </html>

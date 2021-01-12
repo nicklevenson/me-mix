@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-
  
-  resources :poems
-  resources :movies
-  resources :books
-  resources :musics
-  resources :arts
+  resources :poems, only: [:show]
+  resources :movies, only: [:show]
+  resources :books, only: [:show]
+  resources :musics, only: [:show]
+  resources :arts, only: [:show]
   resources :mixes
   resources :users
   root 'welcome#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+ 
 end
