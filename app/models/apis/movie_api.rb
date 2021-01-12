@@ -17,7 +17,7 @@ class MovieApi
                         director: movie.director, 
                         description: movie.plot, 
                         image: movie.poster, 
-                        url: "imdb.com/title/#{movie.imdb_id}"}
+                        url: "http://imdb.com/title/#{movie.imdb_id}"}
     end
     filtered_data
   end

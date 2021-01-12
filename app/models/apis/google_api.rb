@@ -13,7 +13,7 @@ class GoogleApi
                 creators: book["volumeInfo"]["authors"], 
                 description:  book["volumeInfo"]["description"],
                 image: book["volumeInfo"]["imageLinks"]["thumbnail"],
-                link: book["volumeInfo"]["canonicalVolumeLink"]}
+                url: book["volumeInfo"]["canonicalVolumeLink"]}
     end
     books
  
