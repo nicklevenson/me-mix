@@ -1,8 +1,18 @@
 module WelcomeHelper
 
   def filter 
-    if params[:query]
+    if params[:query] && params[:filter] == "All"
       get_all_results
+    elsif params[:query] && params[:filter] == "Music"
+      get_music
+    elsif params[:query] && params[:filter] == "Poetry"
+      get_poems
+    elsif params[:query] && params[:filter] == "Movies/TV"
+      get_movies
+    elsif params[:query] && params[:filter] == "Books"
+      get_books
+    elsif params[:query] && params[:filter] == "Artwork"
+      get_art
     end
   end
 
@@ -19,23 +29,23 @@ module WelcomeHelper
 
 
   def get_music
-    @songs = SpotifyApi.new.fetch_music(params[:query])
+    SpotifyApi.new.fetch_music(params[:query])
   end
 
   def get_poems
-    @poems = PoemApi.new.scrape_poems(params[:query])
+    PoemApi.new.scrape_poems(params[:query])
   end
 
   def get_movies
-    @movies = MovieApi.new.fetch_movies(params[:query])
+    MovieApi.new.fetch_movies(params[:query])
   end
 
   def get_books
-    @books = GoogleApi.new.fetch_books(params[:query])
+    GoogleApi.new.fetch_books(params[:query])
   end
 
   def get_art
-    @art = ArtApi.new.fetch_art(params[:query])
+    ArtApi.new.fetch_art(params[:query])
   end
 
   def render_piece(result)
