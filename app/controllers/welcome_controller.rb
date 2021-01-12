@@ -1,10 +1,8 @@
 class WelcomeController < ApplicationController
   include WelcomeHelper
   def index
+    get_results
+    byebug
   end
 
-  def search
-    get_results
-   
-  end
 end

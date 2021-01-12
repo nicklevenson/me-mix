@@ -11,7 +11,7 @@ class SpotifyApi
       elsif result.type == 'track'
         filtered_data << {title: result.name,creators: result.artists.collect{|c|c.name}, url: result.uri, type: result.type}
       elsif result.type == 'playlist'
-        filtered_data << {title: result.name,creators: result.owner.display_name, url: result.uri, type: result.type}
+        filtered_data << {data_type: "music", title: result.name,creators: result.owner.display_name, url: result.uri, type: result.type}
       end
     end
     filtered_data

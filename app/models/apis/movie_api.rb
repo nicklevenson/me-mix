@@ -11,7 +11,8 @@ class MovieApi
     end
     filtered_data = []
     movies.each do |movie|
-      filtered_data << {title: movie.title, 
+      filtered_data << {data_type: "movie"
+                        title: movie.title, 
                         year: movie.year, 
                         director: movie.director, 
                         description: movie.plot, 
