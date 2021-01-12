@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
  
 
   def index
-    @results = filter ||= []
+    @results = filter || []
   end
 
 end
