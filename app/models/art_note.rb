@@ -1,0 +1,2 @@
+class ArtNote < ApplicationRecord
+end

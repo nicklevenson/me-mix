@@ -1,0 +1,2 @@
+class MovieMix < ApplicationRecord
+end

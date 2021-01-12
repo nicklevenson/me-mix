@@ -1,0 +1,2 @@
+class PoemMix < ApplicationRecord
+end

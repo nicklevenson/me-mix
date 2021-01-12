@@ -1,0 +1,2 @@
+class PoemNote < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class BookMix < ApplicationRecord
+end

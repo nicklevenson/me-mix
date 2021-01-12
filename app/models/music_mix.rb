@@ -1,0 +1,2 @@
+class MusicMix < ApplicationRecord
+end

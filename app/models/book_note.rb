@@ -1,0 +1,2 @@
+class BookNote < ApplicationRecord
+end

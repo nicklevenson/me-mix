@@ -1,0 +1,2 @@
+class ArtMix < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class MovieNote < ApplicationRecord
+end
