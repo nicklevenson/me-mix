@@ -10,7 +10,7 @@ class MixesController < ApplicationController
     media = Media.find_or_create_by(url: media_data[:url])
     media.update(media_data)
     
-    mix.medias << media
+    mix.medias << media unless mix.medias.include?(media)
     
     byebug
    
