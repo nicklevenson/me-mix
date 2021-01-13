@@ -6,9 +6,8 @@ class MixesController < ApplicationController
   def create
     params.inspect
     mix = current_user.mixes.find_or_create_by(mix_params)
-    create_media
-    byebug
-  
+    create_media(mix)
+
   end
 
   private

@@ -5,7 +5,6 @@ class CreateMusics < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :creators
       t.string :url
-      t.string :type
       t.timestamps
     end
   end

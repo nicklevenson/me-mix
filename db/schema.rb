@@ -137,7 +137,6 @@ ActiveRecord::Schema.define(version: 2021_01_12_202342) do
     t.string "title"
     t.string "creators"
     t.string "url"
-    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
