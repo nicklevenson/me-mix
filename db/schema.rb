@@ -12,58 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_01_13_023222) do
 
-  create_table "art_mixes", force: :cascade do |t|
-    t.integer "mix_id"
-    t.integer "art_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "art_notes", force: :cascade do |t|
-    t.text "content"
-    t.integer "mix_id"
-    t.integer "art_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "arts", force: :cascade do |t|
-    t.string "data_type"
-    t.string "title"
-    t.string "creator"
-    t.string "date"
-    t.string "image"
-    t.string "url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "book_mixes", force: :cascade do |t|
-    t.integer "mix_id"
-    t.integer "book_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "book_notes", force: :cascade do |t|
-    t.text "content"
-    t.integer "mix_id"
-    t.integer "book_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "books", force: :cascade do |t|
-    t.string "data_type"
-    t.string "title"
-    t.string "creators"
-    t.string "description"
-    t.string "image"
-    t.string "url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "mix_id"
@@ -93,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_01_13_023222) do
 
   create_table "mix_media", force: :cascade do |t|
     t.integer "mix_id"
-    t.integer "medium_id"
+    t.integer "media_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -105,81 +53,6 @@ ActiveRecord::Schema.define(version: 2021_01_13_023222) do
     t.boolean "public"
     t.string "background_color"
     t.string "font_color"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "movie_mixes", force: :cascade do |t|
-    t.integer "mix_id"
-    t.integer "movie_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "movie_notes", force: :cascade do |t|
-    t.text "content"
-    t.integer "mix_id"
-    t.integer "movie_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "movies", force: :cascade do |t|
-    t.string "data_type"
-    t.string "title"
-    t.string "year"
-    t.string "director"
-    t.string "description"
-    t.string "image"
-    t.string "url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "music_mixes", force: :cascade do |t|
-    t.integer "mix_id"
-    t.integer "music_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "music_notes", force: :cascade do |t|
-    t.text "content"
-    t.integer "mix_id"
-    t.integer "music_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "musics", force: :cascade do |t|
-    t.string "data_type"
-    t.string "title"
-    t.string "creators"
-    t.string "url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "poem_mixes", force: :cascade do |t|
-    t.integer "mix_id"
-    t.integer "poem_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "poem_notes", force: :cascade do |t|
-    t.text "content"
-    t.integer "mix_id"
-    t.integer "poem_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "poems", force: :cascade do |t|
-    t.string "data_type"
-    t.string "title"
-    t.string "creator"
-    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
