@@ -6,7 +6,7 @@
   <%end%>
   
   <datalist id="title">
-  <%user.mixes.each do |m|%>
+  <%current_user.mixes.each do |m|%>
     <option value="<%=m.title%>"></option>
   <%end%>
   </datalist>

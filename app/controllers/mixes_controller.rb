@@ -6,14 +6,11 @@ class MixesController < ApplicationController
   def create
     params.inspect
     mix = current_user.mixes.find_or_create_by(mix_params)
-    media_data = eval(params[:media])
+    media_data = eval(media_params)
     media = Media.find_or_create_by(url: media_data[:url])
     media.update(media_data)
-    
     mix.medias << media unless mix.medias.include?(media)
     
-    byebug
-   
   end
 
   private
@@ -23,7 +20,7 @@ class MixesController < ApplicationController
   end
 
   def media_params
-    params.require(:media).permit(:media)
+    params.require(:media)
   end
 
 
