@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_12_202342) do
+ActiveRecord::Schema.define(version: 2021_01_13_023222) do
 
   create_table "art_mixes", force: :cascade do |t|
     t.integer "mix_id"
@@ -75,6 +75,25 @@ ActiveRecord::Schema.define(version: 2021_01_12_202342) do
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "mix_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "media", force: :cascade do |t|
+    t.string "data_type"
+    t.string "title"
+    t.string "creators"
+    t.string "date"
+    t.string "image"
+    t.string "url"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mix_media", force: :cascade do |t|
+    t.integer "mix_id"
+    t.integer "medium_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

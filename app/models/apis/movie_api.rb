@@ -13,8 +13,8 @@ class MovieApi
     movies.each do |movie|
       filtered_data << {data_type: "movie",
                         title: movie.title, 
-                        year: movie.year, 
-                        director: movie.director, 
+                        date: movie.year, 
+                        creators: movie.director, 
                         description: movie.plot, 
                         image: movie.poster, 
                         url: "http://imdb.com/title/#{movie.imdb_id}"}
